@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frases de Anime</title>
+  </head>
+<body>
+
+  <h1>Frases de Anime</h1>
+  <p id="subtitulo">Frases para te motivar todo dia!</p>
+
+  <div class="caixa-frase">
+    <p id="frase"></p>
+    <p id="autor"></p>
+    <p id="anime"></p>
+  </div>
+
+  <button onclick="proximaFrase()">Próxima Frase</button>
+
+<script>
+    var frases = [
+      {
+        texto: "Não importa o quão devagar você vá, desde que não pare.",
+        autor: "Rock Lee",
+        anime: "Naruto Shippuden"
+      },
+      {
+        texto: "Se você não lutar pelo que quer, para que você veio até aqui?",
+        autor: "Natsu Dragneel",
+        anime: "Fairy Tail"
+      },
+      {
+        texto: "As pessoas que continuam tentando são as que vencem no final.",
+        autor: "Izuku Midoriya",
+        anime: "My Hero Academia"
+      },
+      {
+        texto: "Não chore para desistir, chore para continuar.",
+        autor: "Monkey D. Luffy",
+        anime: "One Piece"
+      },
+      {
+        texto: "O poder de acreditar em si mesmo é o mais forte que existe.",
+        autor: "Simon",
+        anime: "Gurren Lagann"
+      },
+      {
+        texto: "Enquanto houver vida, há esperança.",
+        autor: "Gon Freecss",
+        anime: "Hunter x Hunter"
+      },
+      {
+        texto: "Nenhum sonho é pequeno demais para ser realizado.",
+        autor: "All Might",
+        anime: "My Hero Academia"
+      }
+    ];
+
+    // Controla qual frase está aparecendo
+    var indice = 0;
+
+    function mostrarFrase() {
+      document.getElementById("frase").textContent = '"' + frases[indice].texto + '"';
+      document.getElementById("autor").textContent = "— " + frases[indice].autor;
+      document.getElementById("anime").textContent = frases[indice].anime;
+    }
+
+    function proximaFrase() {
+      indice = indice + 1;
+
+      if (indice >= frases.length) {
+        indice = 0;
+      }
+
+      mostrarFrase();
+    }
+
+    // Mostra a primeira frase ao abrir a página
+    mostrarFrase();
+</script>
+</body>
+</html>
