@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale-1.0">
-    <title>Projeto Visual Code</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1 id="h1">Eventos Disponíveis</h1>
-        <p id="msg">Mensagem</p>
-      <button onclick="clicar()" id="click">Clique Aqui!</button>
-<script> src="app.js" </script>
+
+  <h1>Login</h1>
+
+  <!-- input cria um campo, não fecha a tag -->
+  <!-- placeholder = nome dentro do formulário -->
+  <input id="input" placeholder="Digite a senha" />
+
+  <!-- botão dispara a função login -->
+  <button onclick="login()">Enviar</button>
+
+  <!-- parágrafo que vai receber a mensagem de retorno -->
+  <p id="mensagem"></p>
+
+  <script src="app.js"></script>
+  <script>
+    function login() {
+      // senha do sistema
+      let senha = "123";
+
+      // pega o valor do input - quando for input, usa .value
+      let senhaDigitada = document.querySelector("#input").value;
+
+      // verifica se a senha digitada é igual à senha do sistema
+      if (senhaDigitada == senha) {
+        document.querySelector("#mensagem").textContent = "Logando...";
+      } else {
+        document.querySelector("#mensagem").textContent = "Senha incorreta.";
+      }
+    }
+  </script>
+
 </body>
 </html>
+
